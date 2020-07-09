@@ -21,9 +21,9 @@ class UsersController < ApplicationController
 		if @user && @user.authenticate(params[:password])
 			session[:user_id] = @user.id
 			redirect_to '/articles'
-    else
-      redirect_to '/login'
-	  end
+		else
+			redirect_to '/login'
+		end
 	end
 
 	def logout
