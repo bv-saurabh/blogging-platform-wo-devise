@@ -1,0 +1,35 @@
+<h1>Signup!</h1>
+
+<%= form_for :user, url: '/users' do |f| %>
+	<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>Account could not be created</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+	<p>
+		Email: <%= f.text_field :email %>
+	</p>
+	<p>
+		Password: <%= f.password_field :password %>
+	</p>
+	<p>
+		Confirm Password: <%= f.password_field :confirm_password %><br>
+	</p>
+	<p>
+		<%= f.submit "Signup" %>
+	</p>
+<% end %>
+
+<p>
+	Existing User? <%= link_to 'Login', login_path %>
+</p>
+
+<p>
+	<%= link_to 'Home', welcome_index_path %>
+</p>
