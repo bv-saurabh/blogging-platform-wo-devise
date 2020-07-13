@@ -1,24 +1,47 @@
 # README
+TRAINING PROGRAM -- PROJECT 3
+DEVELOPING A BLOGGING PLATFORM
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+REQUIREMENTS
 
-Things you may want to cover:
+* Ruby 2.5
 
-* Ruby version
+* Rails 6
 
-* System dependencies
+INSTALL AND MIGRATE DB
 
-* Configuration
+bundle install
+rails db:migrate
 
-* Database creation
+START SERVER
+To start rails server
 
-* Database initialization
+rails server
 
-* How to run the test suite
+Navigate to http://localhost:3000 in the browser to view the home page.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+This is a simple blogging platform developed using rails.
+
+Features:
+
+* Multi user support with authentication
+
+* A user can have many articles
+
+* Articles can be updated or deleted
+
+* A user can only edit or delete their articles
+
+* Anyone can see a list of all the articles, or a particular article without loggin in
+
+Gems used:
+
+* Bcrypt
+
+This project achieves multi user authentication with login and signup using Bcrypt. Anyone can signup
+using an email and a password. After logging in, users are allowed to create new articles, or edit
+or delete the articles they have previously created.
+
+Each article is associated with a user to make sure only the owner can modify or delete articles.
