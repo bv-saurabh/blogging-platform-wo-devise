@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 	def update
 		@article = Article.find(params[:id])
 		if @article.user_id == current_user.id
-			if @article.update_attributes!({:title => params[:article][:title], :body => params[:article][:body]})
+			if @article.update!({:title => params[:article][:title], :body => params[:article][:body]})
 				redirect_to @article
 			else
 				render 'edit'
